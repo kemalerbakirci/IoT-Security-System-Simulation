@@ -108,7 +108,7 @@ To understand this project, learn about:
 - **Node-RED dashboard & flow-based programming**  
 - **JSON-based data communication in IoT**
 
-See [`Learning_Guide_IoT_MQTT.txt`](Learning_Guide_IoT_MQTT.txt) for a beginner-friendly explanation.
+See [`Learning_Guide_IoT_MQTT.txt`](Learning_Guide_IoT_Security.txt) for a beginner-friendly explanation.
 
 ---
 
