@@ -1,0 +1,36 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+
+# Environment variables
+*.env
+
+# Logs
+*.log
+
+# macOS
+.DS_Store
+
+# Node-RED generated files
+flows_cred.json
+*.backup
+*.bak
+
+# Exports or generated files
+exports/
+
+# Ignore everything inside data but keep folder structure
+data/logs/*
+data/database/*
+!data/logs/.gitkeep
+!data/database/.gitkeep
+
+# Assets folder should be tracked (images for README)

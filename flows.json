@@ -1,0 +1,398 @@
+[
+    {
+        "id": "1282734cf837eff1",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "5fd9c1eea19bb197",
+        "type": "mqtt in",
+        "z": "1282734cf837eff1",
+        "name": "",
+        "topic": "home/security/door",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "8ad8f6c34112067c",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 250,
+        "y": 220,
+        "wires": [
+            [
+                "752d899e87cb37bd",
+                "be2c7d1351435fd6"
+            ]
+        ]
+    },
+    {
+        "id": "610fbb64cda29879",
+        "type": "mqtt in",
+        "z": "1282734cf837eff1",
+        "name": "",
+        "topic": "home/security/window",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "8ad8f6c34112067c",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 260,
+        "y": 380,
+        "wires": [
+            [
+                "e82c80528f196a62",
+                "be2c7d1351435fd6"
+            ]
+        ]
+    },
+    {
+        "id": "306c368b0c4c580f",
+        "type": "mqtt in",
+        "z": "1282734cf837eff1",
+        "name": "",
+        "topic": "home/security/motion",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "8ad8f6c34112067c",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 260,
+        "y": 540,
+        "wires": [
+            [
+                "28b3cfd7772a0096",
+                "be2c7d1351435fd6"
+            ]
+        ]
+    },
+    {
+        "id": "752d899e87cb37bd",
+        "type": "ui_text",
+        "z": "1282734cf837eff1",
+        "group": "10e1c88286e4699f",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "door",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 230,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "e82c80528f196a62",
+        "type": "ui_text",
+        "z": "1282734cf837eff1",
+        "group": "10e1c88286e4699f",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "window",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 240,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "28b3cfd7772a0096",
+        "type": "ui_text",
+        "z": "1282734cf837eff1",
+        "group": "10e1c88286e4699f",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "motion",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 230,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "be2c7d1351435fd6",
+        "type": "switch",
+        "z": "1282734cf837eff1",
+        "name": "Intrusion Check",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "OPEN",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "MOTION",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 940,
+        "y": 380,
+        "wires": [
+            [
+                "bb61203801d30a9a"
+            ],
+            [
+                "228fe97d4ec53ddb"
+            ]
+        ]
+    },
+    {
+        "id": "387d0a1638c6ac12",
+        "type": "ui_text",
+        "z": "1282734cf837eff1",
+        "group": "10e1c88286e4699f",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "ALERT",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1390,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "bb61203801d30a9a",
+        "type": "change",
+        "z": "1282734cf837eff1",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Intrusion Detected! 🚨",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1180,
+        "y": 240,
+        "wires": [
+            [
+                "387d0a1638c6ac12"
+            ]
+        ]
+    },
+    {
+        "id": "f9aac9190900dd6c",
+        "type": "mqtt out",
+        "z": "1282734cf837eff1",
+        "name": "Light",
+        "topic": "home/security/light",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "8ad8f6c34112067c",
+        "x": 1550,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "2ff56da3b36d0130",
+        "type": "mqtt out",
+        "z": "1282734cf837eff1",
+        "name": "Alarm",
+        "topic": "home/security/alarm",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "8ad8f6c34112067c",
+        "x": 1530,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "228fe97d4ec53ddb",
+        "type": "change",
+        "z": "1282734cf837eff1",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "ON",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1180,
+        "y": 520,
+        "wires": [
+            [
+                "2ff56da3b36d0130",
+                "f9aac9190900dd6c"
+            ]
+        ]
+    },
+    {
+        "id": "8c8c048d61e94f50",
+        "type": "ui_button",
+        "z": "1282734cf837eff1",
+        "name": "",
+        "group": "10e1c88286e4699f",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Toggle Light",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "ON",
+        "payloadType": "str",
+        "topic": "home/security/light",
+        "topicType": "str",
+        "x": 1330,
+        "y": 640,
+        "wires": [
+            [
+                "f9aac9190900dd6c"
+            ]
+        ]
+    },
+    {
+        "id": "30ae38ea80d6af8b",
+        "type": "ui_button",
+        "z": "1282734cf837eff1",
+        "name": "",
+        "group": "10e1c88286e4699f",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Toggle Alarm",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "ON",
+        "payloadType": "str",
+        "topic": "home/security/alarm",
+        "topicType": "str",
+        "x": 1330,
+        "y": 420,
+        "wires": [
+            [
+                "2ff56da3b36d0130"
+            ]
+        ]
+    },
+    {
+        "id": "8ad8f6c34112067c",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "mqtt://localhost:1883",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "10e1c88286e4699f",
+        "type": "ui_group",
+        "name": "Security Panel",
+        "tab": "72f0e48489aec365",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "72f0e48489aec365",
+        "type": "ui_tab",
+        "name": "Home Security",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "757471c60a48a5da",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-dashboard": "3.6.5"
+        }
+    }
+]
