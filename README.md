@@ -48,6 +48,11 @@ IoT-Security-System-Simulation/
 - Detects intrusion when any sensor reports a threat  
 - Publishes `ON` / `OFF` to actuators (`home/security/alarm` and `home/security/light`)  
 
+### 2.5️⃣ Start Node-RED
+```bash
+node-red
+```
+
 ### 🔹 3. Actuator Listener (Python)
 - Subscribes to actuator topics and prints messages when alarm/light are toggled.
 
