@@ -48,7 +48,7 @@ IoT-Security-System-Simulation/
 - Detects intrusion when any sensor reports a threat  
 - Publishes `ON` / `OFF` to actuators (`home/security/alarm` and `home/security/light`)  
 
-### 2.5️⃣ Start Node-RED
+### 2.5 Start Node-RED
 ```bash
 node-red
 ```
