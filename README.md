@@ -1,4 +1,21 @@
-# IoT Security System Simulation
+# IoTThe system showcases real-world IoT architecture patterns, including persistent messaging, quality of service guarantees, and scalable device management - making it an excellent learning platform for IoT development and a solid foundation for production security systems.
+
+## 🏷️ Technology Badges
+
+![Python](https://img.shields.io/badge/Python-3.8+-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![MQTT](https://img.shields.io/badge/MQTT-Protocol-660066?style=for-the-badge&logo=eclipse-mosquitto&logoColor=white)
+![Node-RED](https://img.shields.io/badge/Node--RED-8F0000?style=for-the-badge&logo=nodered&logoColor=white)
+![IoT](https://img.shields.io/badge/IoT-Internet%20of%20Things-1f77b4?style=for-the-badge&logo=internetofthings&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge&logo=opensourceinitiative&logoColor=white)
+![Platform](https://img.shields.io/badge/Platform-Cross--Platform-lightgrey?style=for-the-badge&logo=cplusplus&logoColor=white)
+
+[![GitHub stars](https://img.shields.io/github/stars/kemalerbakirci/IoT-Security-System-Simulation?style=social)](https://github.com/kemalerbakirci/IoT-Security-System-Simulation/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/kemalerbakirci/IoT-Security-System-Simulation?style=social)](https://github.com/kemalerbakirci/IoT-Security-System-Simulation/network)
+[![GitHub issues](https://img.shields.io/github/issues/kemalerbakirci/IoT-Security-System-Simulation)](https://github.com/kemalerbakirci/IoT-Security-System-Simulation/issues)
+
+---
+
+## 🚀 Key Featuresrity System Simulation
 
 ## 📌 Overview
 This project demonstrates a **professional IoT-based Home Security System** using **MQTT** for communication and **Node-RED** for visualization and control. It simulates a complete security infrastructure with **door, window, and motion sensors**, intelligent intrusion detection, and automated response systems through virtual actuators (**alarm and smart lighting**).
