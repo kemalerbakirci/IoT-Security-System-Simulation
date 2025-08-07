@@ -140,6 +140,17 @@ Our comprehensive documentation covers everything from basic setup to advanced c
 - **Visual Indicators**: Color-coded status lights and alerts
 - **Historical Data**: Event logging and system activity tracking
 
+### Node-RED Flow Architecture
+
+![Node-RED Flow](assets/node_red_flow.png)
+
+The Node-RED flow diagram shows the complete system architecture including:
+- **MQTT Input Nodes**: Receiving sensor data from all devices
+- **Processing Logic**: Intrusion detection and decision-making algorithms
+- **Dashboard Elements**: Real-time visualization and user controls
+- **MQTT Output Nodes**: Sending commands to actuators
+- **Function Nodes**: Custom JavaScript logic for complex operations
+
 ---
 
 ## 🔧 Customization and Extension
